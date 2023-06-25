@@ -1,7 +1,5 @@
 # UCrisko Website (ucrisko)
 
-The UCrisko, LLC website
-
 ## Install the dependencies
 ```bash
 yarn
@@ -36,6 +34,9 @@ npm run format
 ```bash
 quasar build
 ```
+
+### Deploy the code
+Right now, this is just an s3 bucket on AWS. Copy the contents of dist/spa into the bucket "ucrisko.com".
 
 ### Customize the configuration
 See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
