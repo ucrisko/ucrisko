@@ -1,1 +1,30 @@
 // app global css in SCSS form
+@mixin respond-to($media) {
+  @if $media == 'x-small' {
+    @media (max-width: 380px) {
+      @content;
+    }
+  } @else if $media == 'smallAndUp' {
+    @media (min-width: 381px) {
+      @content;
+    }
+  }
+  @if $media == 'small' {
+    @media (min-width: 381px) and (max-width: 600px) {
+      @content;
+    }
+  } @else if $media == 'medium' {
+    @media (min-width: 601px) and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $media == 'mediumAndUp' {
+    @media (min-width: 601px) {
+      @content;
+    }
+  }
+}
+
+.q-btn--standard {
+  background-color: $ucGoldTrim !important;
+  padding: .5rem;
+}
