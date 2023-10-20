@@ -113,6 +113,7 @@ module.exports = configure(function (/* ctx */) {
 
       // Quasar plugins
       plugins: [],
+      cssAddon: true
     },
 
     // animations: 'all', // --- includes all animations
