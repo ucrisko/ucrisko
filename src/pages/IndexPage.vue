@@ -115,7 +115,7 @@
           price.
           Our clients receive both as well as clear communication throughout the development process.</p>
       </div>
-      <q-card class="client-card" flat bordered>
+      <q-card class="client-card text-center" flat bordered>
         <q-img
           src="~/assets/emu-word-logo-250w.png"
           alt="Eastern Michigan University logo"
