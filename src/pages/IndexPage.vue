@@ -101,7 +101,7 @@
     </div>
     <div id="capabilities-section" class="row uc-section q-pa-lg items-center">
       <div id="capabilities-section-text" class="col-xs-12 col-md-6 col-lg-5">
-        <h3 id="h3-main" class="q-mb-md">Our Expertise. Your Dream.</h3>
+        <h3 class="q-mb-md">Our Expertise. Your Dream.</h3>
         From company websites to custom content management systems, UCrisko has
         the expertise to make your dream application a reality. Even if you
         don't need a full web application, the UCrisko team can help you craft
@@ -109,65 +109,72 @@
       </div>
     </div>
     <div id="clients-section" class="row uc-section text-white q-my-lg">
-      <div id="clients-section-text" class="col-xs-12 col-md-4 col-lg-3 q-px-lg q-py-lg-md q-col-gutter-x-lg">
-        <h3 id="h3-main" class="q-mb-md">Client Testimonials</h3>
-        <p>We care for our clients. As a small business, UCrisko understands your desire for quality work at a fair
-          price.
-          Our clients receive both as well as clear communication throughout the development process.</p>
-      </div>
-      <q-card class="client-card text-center" flat bordered>
-        <q-img
-          src="~/assets/emu-word-logo-250w.png"
-          alt="Eastern Michigan University logo"
-          id="emu-logo"
-          class="client-logo"
-        />
-
-        <q-card-section>
-          <div class="text-overline text-orange-9">Eastern Michigan University</div>
-          <div class="text-h5 q-mt-sm q-mb-xs">Title</div>
-          <div class="text-black">
-            <p>"Robiccon was seeking an effective way to promote its business technology solutions to a variety of
-              businesses. After a lengthy consideration of the available options, we chose UCrisko. We are very pleased
-              with the outcome and continue our relationship with UCrisko to this day."</p>
-            <p class="text-right text-italic">- Darcy Gifford<br>Assistant Vice President for Marketing and
-              Communications</p>
-          </div>
-        </q-card-section>
-
-        <q-card-actions>
-          <q-btn color="primary" label="Visit EMU Today"/>
-        </q-card-actions>
-      </q-card>
-      <q-card class="client-card q-ml-xs-none q-ml-sm-md q-ml-lg-xl q-mt-xs-lg q-mt-md-none" flat bordered>
-        <div class="text-center">
-          <q-img
-            src="~/assets/robiccon.png"
-            alt="Robiccon logo"
-            id="robiccon-logo"
-            class="client-logo q-mt-lg"
-          />
+      <div id="clients-section-text" class="col-xs-12 col-sm-4">
+        <div class="q-mx-md">
+          <h3 class="q-mb-md">Client Testimonials</h3>
+          <p>We care for our clients. As a small business, UCrisko understands your desire for quality work at a fair
+            price.
+            Our clients receive both as well as clear communication throughout the development process.</p>
         </div>
-
-
-        <q-card-section>
-          <div class="text-overline text-orange-9 text-center">Robiccon</div>
-          <div class="text-h5 q-mt-sm q-mb-xs">Title</div>
-          <div class="text-black">
-            <p>"Robiccon was seeking an effective way to promote its business technology solutions to a variety of
-              businesses. After a lengthy consideration of the available options, we chose UCrisko. We are very pleased
-              with the outcome and continue our relationship with UCrisko to this day."</p>
-            <p class="text-right text-italic">- John Cottos<br>Operations & Customer Service Manager</p>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="q-mx-xs-sm q-mx-sm-md">
+        <q-card class="client-card q-px-sm-md q-px-md-none" flat bordered>
+          <div class="text-center">
+            <q-img
+              src="~/assets/emu-word-logo-250w.png"
+              alt="Eastern Michigan University logo"
+              id="emu-logo"
+              class="client-logo"
+            />
           </div>
-        </q-card-section>
+          <q-card-section>
+            <div class="text-h5 q-pt-sm q-pb-xs text-center">Eastern Michigan University</div>
+            <div class="text-black">
+              <p>"Robiccon was seeking an effective way to promote its business technology solutions to a variety of
+                businesses. After a lengthy consideration of the available options, we chose UCrisko. We are very pleased
+                with the outcome and continue our relationship with UCrisko to this day."</p>
+              <p class="text-right text-italic">- Darcy Gifford<br>Assistant Vice President for Marketing and
+                Communications</p>
+            </div>
+          </q-card-section>
 
-        <q-card-actions>
           <q-card-actions>
-            <q-btn color="primary" label="Visit Robiccon.com" class="vertical-bottom"/>
+            <q-btn color="primary" label="Visit EMU Today" icon-right="mdi-open-in-new" href="https://today.emich.edu" target="_blank" />
           </q-card-actions>
-        </q-card-actions>
-      </q-card>
+        </q-card>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="q-mx-xs-sm q-mx-sm-md q-mt-xs-md q-mt-sm-none">
+        <q-card class="client-card q-px-sm-md q-px-md-none" flat bordered>
+          <div class="text-center">
+            <q-img
+              src="~/assets/robiccon.png"
+              alt="Robiccon logo"
+              id="robiccon-logo"
+              class="client-logo q-mt-lg"
+            />
+          </div>
 
+          <q-card-section>
+            <div class="text-h5 q-mt-sm q-mb-xs text-center">Robiccon</div>
+            <div class="text-black">
+              <p>"Robiccon was seeking an effective way to promote its business technology solutions to a variety of
+                businesses. After a lengthy consideration of the available options, we chose UCrisko. We are very pleased
+                with the outcome and continue our relationship with UCrisko to this day."</p>
+              <p class="text-right text-italic">- John Cottos<br>Operations & Customer Service Manager</p>
+            </div>
+          </q-card-section>
+
+          <q-card-actions>
+            <q-card-actions>
+              <q-btn color="primary" label="Visit Robiccon.com" class="vertical-bottom" icon-right="mdi-open-in-new" href="https://robiccon.com" target="_blank" />
+            </q-card-actions>
+          </q-card-actions>
+        </q-card>
+        </div>
+      </div>
     </div>
 
     <!-- place QPageScroller at end of page -->
@@ -230,7 +237,7 @@ export default defineComponent({
 
 #why-uc-section {
   background-color: $ucBkgDark;
-  @include respond-to("mediumAndUp") {
+  @include respond-to("mdAndUp") {
     background-image: url("src/assets/it-globe.jpg");
     background-repeat: no-repeat;
     background-position: top right;
@@ -240,7 +247,7 @@ export default defineComponent({
 
 #capabilities-section {
   background-color: #cccccc;
-  @include respond-to("mediumAndUp") {
+  @include respond-to("mdAndUp") {
     background-image: url("src/assets/cube_text.png"), url("src/assets/grey_bkg.jpg");
     background-repeat: no-repeat, no-repeat;
     background-position: center right, center left;
@@ -249,8 +256,8 @@ export default defineComponent({
 }
 
 #clients-section {
-  @include respond-to("mediumAndUp") {
-    //max-height: 550px;
+  @include respond-to("mdAndUp") {
+
   }
 }
 
@@ -277,6 +284,14 @@ export default defineComponent({
 
 .client-card {
   width: 100%;
-  max-width: 350px
+  max-width: 100%;
+  background-color: $ucGoldTrim;
+  color: $ucBkgDark;
+  //@include respond-to("mdAndUp") {
+  //  max-width: 450px;
+  //}
+  .q-btn--standard {
+    background-color: $ucBkgDark !important;
+  }
 }
 </style>

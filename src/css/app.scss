@@ -1,26 +1,52 @@
 // app global css in SCSS form
 @mixin respond-to($media) {
-  @if $media == "x-small" {
-    @media (max-width: 380px) {
+  @if $media == "xsOnly" {
+    @media (max-width: $breakpoint-xs-max) {
       @content;
     }
-  } @else if $media == "smallAndUp" {
-    @media (min-width: 381px) {
+  } @else if $media == "smAndUp" {
+    @media (min-width: $breakpoint-sm-min) {
+      @content;
+    }
+  } @else if $media == "smOnly" {
+    @media (min-width: $breakpoint-sm-min) and (max-width: $breakpoint-sm-max) {
+      @content;
+    }
+  } @else if $media == "mdAndUp" {
+    @media (min-width: $breakpoint-md-min) {
+      @content;
+    }
+  } @else if $media == "mdOnly" {
+    @media (min-width: $breakpoint-md-min) and (max-width: $breakpoint-md-max) {
+      @content;
+    }
+  } @else if $media == "lgAndUp" {
+    @media (min-width: $breakpoint-lg-min) {
+      @content;
+    }
+  } @else if $media == "lgOnly" {
+    @media (min-width: $breakpoint-lg-min) and (max-width: $breakpoint-lg-max) {
+      @content;
+    }
+  } @else if $media == "xlOnly" {
+    @media (min-width: $breakpoint-xl-min) {
       @content;
     }
   }
-  @if $media == "small" {
-    @media (min-width: 381px) and (max-width: 600px) {
-      @content;
-    }
-  } @else if $media == "medium" {
-    @media (min-width: 601px) and (max-width: 1024px) {
-      @content;
-    }
-  } @else if $media == "mediumAndUp" {
-    @media (min-width: 601px) {
-      @content;
-    }
+}
+
+h2 {
+  word-wrap: break-word;
+  @include respond-to("smOnly") {
+    font-size: 3rem;
+    line-height: inherit;
+  }
+}
+h3 {
+  word-wrap: break-word;
+  @include respond-to("smOnly") {
+    font-size: 1.5rem;
+    line-height: inherit;
   }
 }
 
