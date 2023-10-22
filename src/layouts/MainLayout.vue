@@ -65,47 +65,69 @@
 
     <q-footer bordered class="bg-grey-8 text-white">
       <div class="row justify-center">
-        <div class="col-xs-12 col-md-3">First column</div>
-        <div class="col-xs-12 col-md-6 text-center">
-          <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
-            <q-input
-              filled
-              v-model="name"
-              label="Your name *"
-              hint="Name and surname"
-              lazy-rules
-              :rules="[
-                (val) => (val && val.length > 0) || 'Please type something',
-              ]"
-            />
-
-            <q-input
-              filled
-              type="number"
-              v-model="age"
-              label="Your age *"
-              lazy-rules
-              :rules="[
-                (val) => (val !== null && val !== '') || 'Please type your age',
-                (val) => (val > 0 && val < 100) || 'Please type a real age',
-              ]"
-            />
-
-            <q-toggle v-model="accept" label="I accept the license and terms"/>
-
-            <div>
-              <q-btn label="Submit" type="submit" color="primary"/>
-              <q-btn
-                label="Reset"
-                type="reset"
-                color="primary"
-                flat
-                class="q-ml-sm"
-              />
-            </div>
-          </q-form>
+        <div class="col-xs-12 col-md-4">
+          <div class="q-px-xl q-py-md">
+            Left column
+          </div>
         </div>
-        <div class="col-xs-12 col-md-3">Third column</div>
+        <div class="col-xs-12 col-md-4 text-center">
+          <div class="q-px-xl q-py-md">
+            Middle column
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="q-px-xl q-py-md">
+            <q-card class="q-ma-sm q-px-md q-py-md" flat bordered>
+              <h4 class="text-black q-mt-none q-mb-sm">Ready to get started?</h4>
+              <q-form @submit="onSubmit" @reset="onReset">
+                <q-input
+                  filled
+                  v-model="contactForm.name"
+                  lazy-rules
+                  label-slot
+                  :rules="[
+                  (val) => (val && val.length > 0) || 'Name is required',
+                ]"
+                >
+                  <template v-slot:label>
+                    Your name <span class="text-red-10">*</span>
+                  </template>
+                </q-input>
+
+                <q-input
+                  filled
+                  v-model="contactForm.email"
+                  label="Your email *"
+                  lazy-rules
+                  :rules="emailRules"
+                >
+                  <template v-slot:label>
+                    Your email <span class="text-red-10">*</span>
+                  </template>
+                </q-input>
+
+                <q-input
+                  filled
+                  type="textarea"
+                  v-model="contactForm.content"
+                  label="What can we do for you? *"
+                  lazy-rules
+                  :rules="[
+                (val) => (val && val.length > 0) || 'Details are required',
+              ]"
+                >
+                  <template v-slot:label>
+                    Content <span class="text-red-10">*</span>
+                  </template>
+                </q-input>
+
+                <div>
+                  <q-btn label="Submit Request" type="submit" color="primary"/>
+                </div>
+              </q-form>
+            </q-card>
+          </div>
+        </div>
       </div>
     </q-footer>
   </q-layout>
@@ -113,7 +135,7 @@
 
 <script>
 import {useQuasar} from "quasar"
-import {ref} from "vue"
+import {ref, reactive} from "vue"
 
 export default {
   setup() {
@@ -122,6 +144,15 @@ export default {
     const name = ref(null);
     const age = ref(null);
     const accept = ref(false);
+    const contactForm = reactive({
+      name: null,
+      email: null,
+      content: null,
+    });
+    const emailRules = [
+      v => !!v || 'Email is required',
+      v => /^([\w+-.%]+@[\w-.]+\.[A-Za-z]{2,24},?\s?)+$/.test(v) || 'Email must be valid'
+    ]
 
     return {
       name,
@@ -129,31 +160,30 @@ export default {
       accept,
       drawerLeft: ref(false),
       tabToolbar: ref("whyuc"),
-
+      contactForm,
+      emailRules,
       onSubmit() {
-        if (accept.value !== true) {
-          $q.notify({
-            color: "red-5",
-            textColor: "white",
-            icon: "warning",
-            message: "You need to accept the license and terms first"
-          });
-        } else {
+        // if (accept.value !== true) {
+        //   $q.notify({
+        //     color: "red-5",
+        //     textColor: "white",
+        //     icon: "warning",
+        //     message: "You need to accept the license and terms first"
+        //   });
+        // } else {
           $q.notify({
             color: "green-4",
             textColor: "white",
-            icon: "cloud_done",
-            message: "Submitted"
+            icon: "check",
+            message: "Thank you. We will be in touch."
           });
-        }
+        // }
       },
-
       onReset() {
         name.value = null;
         age.value = null;
         accept.value = false;
       },
-
       scrollToAnchor(anchor) {
         // Get a reference to the anchor element
         const anchorElement = document.getElementById(anchor);
@@ -165,12 +195,12 @@ export default {
           anchorElement.scrollIntoView({
             behavior: "smooth", // Add smooth scrolling
             block: "start" // Scroll to the top of the element
-          });
+          })
         }
       }
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss">

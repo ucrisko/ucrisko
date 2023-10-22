@@ -26,78 +26,6 @@
         >Let's get started!
         </q-btn>
       </div>
-      <!--      <div class="flex justify-center q-mx-xl">-->
-      <!--        <div class="row q-gutter-lg">-->
-      <!--          <q-card-->
-      <!--            bordered-->
-      <!--            class="bg-grey-1 why-uc-card flex justify-center items-center text-center"-->
-      <!--          >-->
-      <!--            <q-card-section>-->
-      <!--              <div class="text-h6">Industry Expertise</div>-->
-      <!--              <q-icon name="business" class="text-red-10" size="5em"/>-->
-      <!--            </q-card-section>-->
-      <!--            <q-card-section>-->
-      <!--              From automotive to retail, our team builds applications tailored-->
-      <!--              to the needs of our clients.-->
-      <!--            </q-card-section>-->
-      <!--            <q-card-section>-->
-      <!--              <q-btn-->
-      <!--                href="mailto:cpuzzuol@ucrisko.com?subject=Schedule a meeting&body=I came across your website, ucrisko.com, and would like to meet to discuss a web project."-->
-      <!--                tabindex="1"-->
-      <!--              >Prove it-->
-      <!--              </q-btn-->
-      <!--              >-->
-      <!--            </q-card-section>-->
-      <!--          </q-card>-->
-      <!--          <q-card-->
-      <!--            dark-->
-      <!--            bordered-->
-      <!--            class="bg-blue-grey-10 why-uc-card flex justify-center items-center text-center"-->
-      <!--          >-->
-      <!--            <q-card-section>-->
-      <!--              <div class="text-h6">Focused on the Future</div>-->
-      <!--              <q-icon name="school" class="text-red-10" size="5em"/>-->
-      <!--            </q-card-section>-->
-      <!--            <q-card-section>-->
-      <!--              We partner with Universities and academic institutions that shape-->
-      <!--              the minds of tomorrow.-->
-      <!--            </q-card-section>-->
-      <!--            <q-card-section>-->
-      <!--              <q-btn-->
-      <!--                color="white"-->
-      <!--                class="text-black"-->
-      <!--                href="mailto:cpuzzuol@ucrisko.com?subject=Schedule a meeting&body=I came across your website, ucrisko.com, and would like to meet to discuss a web project."-->
-      <!--                tabindex="2"-->
-      <!--              >Show me-->
-      <!--              </q-btn-->
-      <!--              >-->
-      <!--            </q-card-section>-->
-      <!--          </q-card>-->
-      <!--          <q-card-->
-      <!--            bordered-->
-      <!--            class="bg-grey-1 why-uc-card flex justify-center items-center text-center"-->
-      <!--          >-->
-      <!--            <q-card-section>-->
-      <!--              <div class="text-h6">Quality Meets Service</div>-->
-      <!--              <q-icon name="groups" class="text-red-10" size="5em"/>-->
-      <!--            </q-card-section>-->
-
-      <!--            <q-card-section>-->
-      <!--              We are a client-focused company. We want to treat you to a-->
-      <!--              first-class experience.-->
-      <!--            </q-card-section>-->
-
-      <!--            <q-card-section>-->
-      <!--              <q-btn-->
-      <!--                href="mailto:cpuzzuol@ucrisko.com?subject=Schedule a meeting&body=I came across your website, ucrisko.com, and would like to meet to discuss a web project."-->
-      <!--                tabindex="3"-->
-      <!--              >Let's talk-->
-      <!--              </q-btn-->
-      <!--              >-->
-      <!--            </q-card-section>-->
-      <!--          </q-card>-->
-      <!--        </div>-->
-      <!--      </div>-->
     </div>
     <div id="capabilities-section" class="row uc-section q-pa-lg items-center">
       <div id="capabilities-section-text" class="col-xs-12 col-md-6 col-lg-5">
@@ -109,7 +37,7 @@
       </div>
     </div>
     <div id="clients-section" class="row uc-section text-white q-my-lg">
-      <div id="clients-section-text" class="col-xs-12 col-sm-4">
+      <div id="clients-section-text" class="col-xs-12 col-md-4">
         <div class="q-mx-md">
           <h3 class="q-mb-md">Client Testimonials</h3>
           <p>We care for our clients. As a small business, UCrisko understands your desire for quality work at a fair
@@ -117,7 +45,7 @@
             Our clients receive both as well as clear communication throughout the development process.</p>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="q-mx-xs-sm q-mx-sm-md">
         <q-card class="client-card q-px-sm-md q-px-md-none" flat bordered>
           <div class="text-center">
@@ -145,7 +73,7 @@
         </q-card>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="q-mx-xs-sm q-mx-sm-md q-mt-xs-md q-mt-sm-none">
         <q-card class="client-card q-px-sm-md q-px-md-none" flat bordered>
           <div class="text-center">
@@ -168,9 +96,7 @@
           </q-card-section>
 
           <q-card-actions>
-            <q-card-actions>
-              <q-btn color="primary" label="Visit Robiccon.com" class="vertical-bottom" icon-right="mdi-open-in-new" href="https://robiccon.com" target="_blank" />
-            </q-card-actions>
+            <q-btn color="primary" label="Visit Robiccon.com" class="vertical-bottom" icon-right="mdi-open-in-new" href="https://robiccon.com" target="_blank" />
           </q-card-actions>
         </q-card>
         </div>
@@ -196,9 +122,6 @@ export default defineComponent({
   setup() {
     return {
       emuExpanded: ref(false)
-      // slide: ref('style'),
-      // slide2: ref('style'),
-      // lorem: 'Lorem ipsum dolor, sit ameignissimos praesentium libero ab nemo.'
     };
   }
 });
