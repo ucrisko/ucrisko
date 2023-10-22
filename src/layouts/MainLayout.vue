@@ -79,7 +79,7 @@
           <div class="q-px-xl q-py-md">
             <q-card class="q-ma-sm q-px-md q-py-md" flat bordered>
               <h4 class="text-black q-mt-none q-mb-sm">Ready to get started?</h4>
-              <q-form @submit="onSubmit" @reset="onReset">
+              <q-form name="contact" netlify>
                 <q-input
                   filled
                   v-model="contactForm.name"
@@ -122,7 +122,7 @@
                 </q-input>
 
                 <div>
-                  <q-btn label="Submit Request" type="submit" color="primary"/>
+                  <q-btn label="Submit Request" type="submit" color="primary" @click="submit"/>
                 </div>
               </q-form>
             </q-card>
@@ -162,7 +162,7 @@ export default {
       tabToolbar: ref("whyuc"),
       contactForm,
       emailRules,
-      onSubmit() {
+      submit() {
         // if (accept.value !== true) {
         //   $q.notify({
         //     color: "red-5",
@@ -178,11 +178,6 @@ export default {
             message: "Thank you. We will be in touch."
           });
         // }
-      },
-      onReset() {
-        name.value = null;
-        age.value = null;
-        accept.value = false;
       },
       scrollToAnchor(anchor) {
         // Get a reference to the anchor element
