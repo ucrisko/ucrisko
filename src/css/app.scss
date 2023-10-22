@@ -66,7 +66,7 @@ h3 {
   }
 }
 
-.q-btn--standard {
+.q-btn:not(.q-btn--flat) {
   background-color: $ucGoldTrim !important;
   padding: 0.5rem;
 }

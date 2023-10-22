@@ -16,7 +16,7 @@
         <q-btn dense flat label="Clients" class="xs-hide sm-hide q-pa-sm q-mr-md" @click="scrollToAnchor('clients-section')" />
         <q-separator vertical dark class="xs-hide sm-hide" />
         <q-btn dense flat label="Our Team" class="xs-hide sm-hide q-ml-md"/>
-        <q-btn dense label="Get Started" id="get-started-btn" class="xs-hide sm-hide q-ml-md"/>
+        <q-btn dense square label="Get Started" id="get-started-btn" class="xs-hide sm-hide q-ml-md"/>
       </q-toolbar>
     </q-header>
 
@@ -52,7 +52,7 @@
           </q-item>
           <q-item>
             <q-item-section class="text-center">
-              <q-btn label="Get Started"></q-btn>
+              <q-btn square label="Get Started"></q-btn>
             </q-item-section>
           </q-item>
         </q-list>
@@ -63,11 +63,14 @@
       <router-view/>
     </q-page-container>
 
-    <q-footer bordered class="bg-grey-8 text-white">
+    <q-footer id="main-footer" bordered class="text-white">
       <div class="row justify-center">
         <div class="col-xs-12 col-md-4">
           <div class="q-px-xl q-py-md">
-            Left column
+            <q-img
+              src="~/assets/UC-logo-gold-600w.png"
+              alt="UCrisko logo"
+            />
           </div>
         </div>
         <div class="col-xs-12 col-md-4 text-center">
@@ -77,54 +80,9 @@
         </div>
         <div class="col-xs-12 col-md-4">
           <div class="q-px-xl q-py-md">
-            <q-card class="q-ma-sm q-px-md q-py-md" flat bordered>
-              <h4 class="text-black q-mt-none q-mb-sm">Ready to get started?</h4>
-              <q-form name="contact" netlify>
-                <q-input
-                  filled
-                  v-model="contactForm.name"
-                  lazy-rules
-                  label-slot
-                  :rules="[
-                  (val) => (val && val.length > 0) || 'Name is required',
-                ]"
-                >
-                  <template v-slot:label>
-                    Your name <span class="text-red-10">*</span>
-                  </template>
-                </q-input>
-
-                <q-input
-                  filled
-                  v-model="contactForm.email"
-                  label="Your email *"
-                  lazy-rules
-                  :rules="emailRules"
-                >
-                  <template v-slot:label>
-                    Your email <span class="text-red-10">*</span>
-                  </template>
-                </q-input>
-
-                <q-input
-                  filled
-                  type="textarea"
-                  v-model="contactForm.content"
-                  label="What can we do for you? *"
-                  lazy-rules
-                  :rules="[
-                (val) => (val && val.length > 0) || 'Details are required',
-              ]"
-                >
-                  <template v-slot:label>
-                    Content <span class="text-red-10">*</span>
-                  </template>
-                </q-input>
-
-                <div>
-                  <q-btn label="Submit Request" type="submit" color="primary" @click="submit"/>
-                </div>
-              </q-form>
+            <q-card id="footer-contact-form" class="q-ma-sm q-px-md q-py-md bg-transparent flat">
+              <h4 class="q-mt-none q-mb-sm">Ready to get started?</h4>
+              <ContactForm></ContactForm>
             </q-card>
           </div>
         </div>
@@ -134,13 +92,12 @@
 </template>
 
 <script>
-import {useQuasar} from "quasar"
 import {ref, reactive} from "vue"
+import ContactForm from 'components/ContactForm.vue'
 
 export default {
+  components: {ContactForm},
   setup() {
-    const $q = useQuasar();
-
     const name = ref(null);
     const age = ref(null);
     const accept = ref(false);
@@ -162,23 +119,6 @@ export default {
       tabToolbar: ref("whyuc"),
       contactForm,
       emailRules,
-      submit() {
-        // if (accept.value !== true) {
-        //   $q.notify({
-        //     color: "red-5",
-        //     textColor: "white",
-        //     icon: "warning",
-        //     message: "You need to accept the license and terms first"
-        //   });
-        // } else {
-          $q.notify({
-            color: "green-4",
-            textColor: "white",
-            icon: "check",
-            message: "Thank you. We will be in touch."
-          });
-        // }
-      },
       scrollToAnchor(anchor) {
         // Get a reference to the anchor element
         const anchorElement = document.getElementById(anchor);
@@ -219,5 +159,23 @@ export default {
 
 #main-toolbar {
   background-color: $ucBkgLight;
+}
+
+#main-footer {
+  background-color: $ucBkgDark;
+}
+
+#footer-contact-form {
+  box-shadow: none;
+  .q-field__label, input, textarea {
+    color: white;
+  }
+  .q-field--standard .q-field__control::before {
+    border-bottom-color: white;
+  }
+  .q-field__control {
+    border-color: white;
+    color: $ucGoldTrim;
+  }
 }
 </style>

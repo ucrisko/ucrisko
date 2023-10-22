@@ -23,6 +23,8 @@
           class="text-black"
           href="mailto:cpuzzuol@ucrisko.com?subject=Schedule a meeting&body=I came across your website, ucrisko.com, and would like to meet to discuss a web project."
           tabindex="2"
+          square
+          unelevated
         >Let's get started!
         </q-btn>
       </div>
@@ -68,7 +70,7 @@
           </q-card-section>
 
           <q-card-actions>
-            <q-btn color="primary" label="Visit EMU Today" icon-right="mdi-open-in-new" href="https://today.emich.edu" target="_blank" />
+            <q-btn square unelevated label="Visit EMU Today" icon-right="mdi-open-in-new" href="https://today.emich.edu" target="_blank" />
           </q-card-actions>
         </q-card>
         </div>
@@ -96,7 +98,7 @@
           </q-card-section>
 
           <q-card-actions>
-            <q-btn color="primary" label="Visit Robiccon.com" class="vertical-bottom" icon-right="mdi-open-in-new" href="https://robiccon.com" target="_blank" />
+            <q-btn square unelevated color="primary" label="Visit Robiccon.com" class="vertical-bottom" icon-right="mdi-open-in-new" href="https://robiccon.com" target="_blank" />
           </q-card-actions>
         </q-card>
         </div>
