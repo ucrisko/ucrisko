@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page class="dark-page">
     <div id="main-heading-container">
       <h1 class="text-h2 q-mb-xl">UCrisko, Academic and Web Solutions</h1>
     </div>
@@ -38,7 +38,7 @@
         your organization's logo or re-design an existing site.
       </div>
     </div>
-    <div id="clients-section" class="row uc-section text-white q-my-lg">
+    <div id="clients-section" class="row uc-section text-white q-py-lg">
       <div id="clients-section-text" class="col-xs-12 col-md-4">
         <div class="q-mx-md">
           <h3 class="q-mb-md">Client Testimonials</h3>
@@ -117,7 +117,7 @@
 </template>
 
 <script>
-import {defineComponent, ref} from "vue";
+import { defineComponent, ref } from "vue"
 
 export default defineComponent({
   name: "IndexPage",

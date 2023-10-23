@@ -16,8 +16,8 @@
 
     <q-input
       v-model="contactForm.email"
-      label="Your email *"
       lazy-rules
+      label-slot
       dense
       :rules="emailRules"
     >
@@ -27,17 +27,25 @@
     </q-input>
 
     <q-input
+      v-model="contactForm.phone"
+      label="Your phone number"
+      lazy-rules
+      dense
+    >
+    </q-input>
+
+    <q-input
       type="textarea"
       v-model="contactForm.content"
-      label="What can we do for you? *"
       lazy-rules
+      label-slot
       dense
       :rules="[
                 (val) => (val && val.length > 0) || 'Details are required',
               ]"
     >
       <template v-slot:label>
-        Content <span class="text-red-10">*</span>
+        What can we do for you? <span class="text-red-10">*</span>
       </template>
     </q-input>
 
@@ -59,6 +67,7 @@ export default defineComponent({
       name: null,
       email: null,
       content: null,
+      phone: null
     });
     const emailRules = [
       v => !!v || 'Email is required',

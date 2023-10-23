@@ -11,7 +11,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-body {
-  background: $ucBkgLight;
-}
+
 </style>
